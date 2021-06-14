@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: radial-gradient(
+      circle at 44% 67%,
+      hsla(75, 0%, 92%, 0.1) 0%,
+      hsla(75, 0%, 92%, 0.1) 30%,
+      transparent 30%,
+      transparent 34%,
+      transparent 34%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 33% 92%,
+      hsla(75, 0%, 92%, 0.1) 0%,
+      hsla(75, 0%, 92%, 0.1) 16%,
+      transparent 16%,
+      transparent 53%,
+      transparent 53%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 0% 46%,
+      hsla(75, 0%, 92%, 0.1) 0%,
+      hsla(75, 0%, 92%, 0.1) 42%,
+      transparent 42%,
+      transparent 61%,
+      transparent 61%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 47% 44%,
+      hsla(75, 0%, 92%, 0.1) 0%,
+      hsla(75, 0%, 92%, 0.1) 96%,
+      transparent 96%,
+      transparent 97%,
+      transparent 97%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 34% 28%,
+      hsla(75, 0%, 92%, 0.1) 0%,
+      hsla(75, 0%, 92%, 0.1) 26%,
+      transparent 26%,
+      transparent 85%,
+      transparent 85%,
+      transparent 100%
+    ),
+    linear-gradient(135deg, rgb(48, 2, 209), rgb(100, 28, 120));
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__button {
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.nav__icon {
+  position: relative;
+}
+
+.nav__icon,
+.nav__icon::before,
+.nav__icon::after {
+  width: 50px;
+  height: 5px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: blue;
+}
+
+.nav__icon::after,
+.nav__icon::before {
+  content: "";
+  left: 0;
+  position: absolute;
+  transition: all 0.2s;
+}
+
+.nav__icon::before {
+  top: -10px;
+}
+
+.nav__icon::after {
+  top: 10px;
+}
+
+.nav__button:hover .nav__icon::before {
+  top: -12px;
+}
+
+.nav__button:hover .nav__icon::after {
+  top: 12px;
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon {
+  background: transparent;
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
